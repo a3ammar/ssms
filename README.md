@@ -1,31 +1,26 @@
 # SSMS
 
-TODO: Write a gem description
+A gem for http://ssms.ws API.
 
-## Installation
 
-Add this line to your application's Gemfile:
+## How to use it
 
-```ruby
-gem 'ssms'
-```
+Configure it first with:
 
-And then execute:
+    SSMS.configure do |config|
+      config.username = "username"
+      config.password = "password"
+      config.sender   = "sender"
+    end
 
-    $ bundle
+Then `sms_client = SSMS::SMS.new`.
 
-Or install it yourself as:
+## Example
 
-    $ gem install ssms
+    sms_client = SSMS::SMS.new
+    result = sms_client.send(number, message, language) # returns the response by the API.
+    result.success? # returns true if the message was sent successfully.
+    sms_client.balance # returns your remaining balance.
 
-## Usage
 
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it ( https://github.com/[my-github-username]/ssms/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Please check ssms.ws API [documentation](http://ssms.ws/index.php?action=pages&id=3).
