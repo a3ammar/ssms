@@ -7,20 +7,23 @@ A gem for http://ssms.ws API.
 
 Configure it first with:
 
-    SSMS.configure do |config|
-      config.username = "username"
-      config.password = "password"
-      config.sender   = "sender"
-    end
+```ruby
+SSMS.configure do |config|
+  config.username = "username"
+  config.password = "password"
+  config.sender   = "sender"
+end
+```
 
 Then `sms_client = SSMS::SMS.new`.
 
 ## Example
 
-    sms_client = SSMS::SMS.new
-    result = sms_client.send(number, message, language) # returns the response by the API.
-    result.success? # returns true if the message was sent successfully.
-    sms_client.balance # returns your remaining balance.
-
+```ruby
+sms_client = SSMS::SMS.new
+result = sms_client.send(number, message, language) # returns the response by the API.
+result.success? # returns true if the message was sent successfully.
+sms_client.balance # returns your remaining balance.
+```
 
 Please check ssms.ws API [documentation](http://ssms.ws/index.php?action=pages&id=3).
