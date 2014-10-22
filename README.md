@@ -27,3 +27,8 @@ sms_client.balance # returns your remaining balance.
 ```
 
 Please check ssms.ws API [documentation](http://ssms.ws/index.php?action=pages&id=3).
+
+
+## Notes
+Since most Arabic SMS provides use similar APIs you could easy modify this code to
+work with your provider.
